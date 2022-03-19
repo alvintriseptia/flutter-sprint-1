@@ -12,20 +12,22 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               title: Text('Chapter 4'),
             ),
-            body: Container(
-              color: Colors.amberAccent,
-              margin: EdgeInsets.all(100),
-              child: Container(
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Colors.red, Colors.blue],
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Text 1"),
+                Text("Text 2"),
+                Text("Text 3"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text("Text 4"),
+                    Text("Text 5"),
+                    Text("Text 6"),
+                  ],
+                )
+              ],
             )));
   }
 }

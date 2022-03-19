@@ -10,26 +10,30 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String message = "ini adalah pesan";
+  int counter = 0;
+  void tekanTombol() {
+    setState(() {
+      counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Chapter 7 Anonymous Method'),
+              title: Text('Chapter 6 Stateful Widget'),
             ),
             body: Center(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(message),
+                  children: [
+                    Text(
+                      counter.toString(),
+                      style: TextStyle(fontSize: 10 + counter.toDouble()),
+                    ),
                     RaisedButton(
-                        onPressed: () {
-                          setState(() {
-                            message = "pesan sudah dibaca";
-                          });
-                        },
-                        child: Text("Tandai sudah dibaca"))
+                        onPressed: tekanTombol, child: Text("Tambah angka"))
                   ]),
             )));
   }

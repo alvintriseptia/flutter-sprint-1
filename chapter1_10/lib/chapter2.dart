@@ -13,20 +13,7 @@ class MyApp extends StatelessWidget {
         title: Text('Chapter 2'),
       ),
       body: Center(
-        child: Container(
-            color: Colors.deepOrange,
-            width: 150,
-            height: 50,
-            child: Text(
-              'Bismillah semoga belajar flutter di kodingworks berjalan dengan lancarZZ',
-              // maxLines: 2,
-              // overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontStyle: FontStyle.italic,
-              ),
-            )),
+        child: Text('Hello World'),
       ),
     ));
   }
