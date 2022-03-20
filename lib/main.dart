@@ -6,37 +6,17 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Random random = Random();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Chapter 10 Animated Container'),
+            title: Text('Chapter 13 Image Widget'),
+            //mengatasi perbedaan ukuran layar tiap android
+            //dengan membuat flexible layout
           ),
-          body: Center(
-            child: GestureDetector(
-              onTap: () => setState(() {}),
-              child: AnimatedContainer(
-                duration: Duration(seconds: 1),
-                width: 50.0 + random.nextInt(101),
-                height: 50.0 + random.nextInt(101),
-                color: Color.fromARGB(
-                  255,
-                  random.nextInt(256),
-                  random.nextInt(256),
-                  random.nextInt(256),
-                ),
-              ),
-            ),
-          )),
+          body: Container()),
     );
   }
 }
