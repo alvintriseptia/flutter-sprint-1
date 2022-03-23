@@ -1,7 +1,5 @@
-import 'dart:math';
+import 'dart:ui';
 
-import 'package:chapter1_10/chapter16/login_page.dart';
-import 'package:chapter1_10/chapter30/colorful_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,30 +9,36 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MainPage());
+    return MaterialApp(
+        home: Scaffold(
+      appBar: AppBar(title: Text('Chapter 35 ClipPath')),
+      body: Center(
+          child: ClipPath(
+              clipper: MyClipper(),
+              child: Image.asset(
+                "assets/images/bola.jpg",
+                height: 300,
+                width: 300,
+                fit: BoxFit.cover,
+              ))),
+    ));
   }
 }
 
-class MainPage extends StatelessWidget {
+class MyClipper extends CustomClipper<Path> {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Text(
-            "Chapter 30 Colorful Buttons",
-          ),
-        ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ColorfulButton(Colors.pink, Colors.blue, Icons.adb),
-              ColorfulButton(Colors.purple, Colors.blue, Icons.comment),
-              ColorfulButton(Colors.deepOrange, Colors.blue, Icons.facebook),
-              ColorfulButton(Colors.blueAccent, Colors.blue, Icons.telegram),
-            ],
-          ),
-        ));
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, size.height);
+    path.quadraticBezierTo(
+        size.width / 2, size.height * 0.75, size.width, size.height);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
