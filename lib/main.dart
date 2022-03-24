@@ -1,44 +1,22 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(title: Text('Chapter 35 ClipPath')),
-      body: Center(
-          child: ClipPath(
-              clipper: MyClipper(),
-              child: Image.asset(
-                "assets/images/bola.jpg",
-                height: 300,
-                width: 300,
-                fit: BoxFit.cover,
-              ))),
+      appBar: AppBar(title: Text('Chapter 41 Shared Preferences')),
+      body: Center(child: Text("Hello World")),
     ));
-  }
-}
-
-class MyClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height);
-    path.quadraticBezierTo(
-        size.width / 2, size.height * 0.75, size.width, size.height);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }
