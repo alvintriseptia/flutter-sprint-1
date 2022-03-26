@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:chapter1_10/chapter16/login_page.dart';
-import 'package:chapter1_10/chapter30/colorful_button.dart';
+import 'package:sprint1/chapter16/login_page.dart';
+import 'package:sprint1/chapter30/colorful_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-name: chapter1_10
+name: sprint1
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -38,6 +38,9 @@ dependencies:
   audioplayers: ^0.13.0
   http: ^0.12.0+2
   shared_preferences: ^0.5.3+4
+  provider: ^5.0.0
+  bloc: ^7.0.0
+  flutter_bloc: ^7.1.0
 
 dev_dependencies:
   flutter_test:

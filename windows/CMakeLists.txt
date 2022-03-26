@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(chapter1_10 LANGUAGES CXX)
+project(sprint1 LANGUAGES CXX)
 
-set(BINARY_NAME "chapter1_10")
+set(BINARY_NAME "sprint1")
 
 cmake_policy(SET CMP0063 NEW)
 

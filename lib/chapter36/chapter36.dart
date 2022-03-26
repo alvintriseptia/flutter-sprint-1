@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:chapter1_10/chapter36/post_result_method.dart';
+import 'package:sprint1/chapter36/post_result_method.dart';
 import 'package:flutter/material.dart';
 
 void main() {

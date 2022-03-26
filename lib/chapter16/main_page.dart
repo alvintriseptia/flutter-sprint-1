@@ -1,4 +1,4 @@
-import 'package:chapter1_10/chapter16/second_page.dart';
+import 'package:sprint1/chapter16/second_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {

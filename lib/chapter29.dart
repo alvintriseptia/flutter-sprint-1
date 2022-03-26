@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:chapter1_10/chapter16/login_page.dart';
+import 'package:sprint1/chapter16/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
