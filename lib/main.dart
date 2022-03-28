@@ -11,26 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        home: BlocProvider<UserBloc>(
+            create: (context) => UserBloc(), child: MainPage()));
   }
-}
-
-class MainPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("judul")),
-      body: Container(),
-    );
-  }
-}
-
-class Person {
-  int _umur;
-  set setUmur(int value) {
-    _umur = value;
-  }
-
-  int get getUmur => _umur;
 }

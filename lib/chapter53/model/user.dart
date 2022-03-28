@@ -16,22 +16,29 @@ class User {
     this.avatar = "",
   });
 
-  factory User.createUser(Map<String, dynamic> json) {
-    return User(
-      id: json['id'],
-      email: json['email'],
-      firstName: json['first_name'],
-      lastName: json['last_name'],
-      avatar: json['avatar'],
-    );
+  User.createUser(Map<String, dynamic> json) {
+    id = json['id'].toString();
+    email = json['email'];
+    firstName = json['first_name'];
+    lastName = json['last_name'];
+    avatar = json['avatar'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['email'] = this.email;
+    data['first_name'] = this.firstName;
+    data['last_name'] = this.lastName;
+    data['avatar'] = this.avatar;
+    return data;
   }
 
   static Future<User> getUserFromAPI(int id) async {
     String apiURL = "https://reqres.in/api/users/" + id.toString();
     var apiResult = await http.get(Uri.parse(apiURL));
     var jsonObject = json.decode(apiResult.body);
-    var userData = (jsonObject as Map<String, dynamic>)['data'];
-    return User.createUser(userData);
+    return User.createUser(jsonObject['data']);
   }
 }
 
