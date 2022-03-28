@@ -24,9 +24,7 @@ class MainPage extends StatelessWidget {
               child: Text("Pick Random User"),
             ),
             BlocBuilder<UserBloc, User>(builder: (context, user) {
-              return (user is UninitializedUser)
-                  ? Container()
-                  : UserCard(user: user);
+              return (user is UninitializedUser) ? Container() : UserCard(user);
             })
           ],
         ));

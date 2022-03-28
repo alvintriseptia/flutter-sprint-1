@@ -28,7 +28,7 @@ class User {
 
   static Future<User> getUserFromAPI(int id) async {
     String apiURL = "https://reqres.in/api/users/" + id.toString();
-    var apiResult = await http.get(apiURL);
+    var apiResult = await http.get(Uri.parse(apiURL));
     var jsonObject = json.decode(apiResult.body);
     var userData = (jsonObject as Map<String, dynamic>)['data'];
     return User.createUser(userData);

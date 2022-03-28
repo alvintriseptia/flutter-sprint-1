@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sprint1/chapter37/user_mode.dart';
-import 'package:sprint1/chapter38/user_model.dart';
 import 'package:sprint1/chapter53/model/user.dart';
 
 class UserCard extends StatelessWidget {
   User user;
 
-  UserCard({this.user});
+  UserCard(this.user);
 
   @override
   Widget build(BuildContext context) {
